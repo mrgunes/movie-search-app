@@ -1,0 +1,29 @@
+{
+  "presets": [
+    /* For compiling Javascript ES6 code down to ES5 */
+    "@babel/preset-env",
+
+    /* For compiling JSX and other stuff down to JavaScript */
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    /* To support experimental class properties */
+    "@babel/plugin-proposal-class-properties",
+    [
+      /*
+      Regenerator flag needs to be true for "async" to work. 
+      Async internally use JavaScript's experimental
+      generator functions.
+
+      https://babeljs.io/docs/en/babel-plugin-transform-runtime
+      */
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": false,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ]
+  ]
+}
