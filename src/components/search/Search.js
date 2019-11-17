@@ -88,7 +88,7 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  getSearchResults: PropTypes.func
+  getSearchResults: PropTypes.func.isRequired
 };
 
 export default Search;

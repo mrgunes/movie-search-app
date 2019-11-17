@@ -4,6 +4,7 @@ import { Card, Icon } from "@blueprintjs/core";
 import styled from "styled-components";
 import moment from "moment";
 import languages from "../../config/languages";
+import { POSTER_BASE_PATH } from "../../config/constants";
 import { noDesc, noDate } from "../../config/appConfig";
 import utils from "../../utils/utils";
 
@@ -93,7 +94,7 @@ const MovieInstance = ({
         <AdditionalInfoItem>
           {posterPath ? (
             <a
-              href={`https://image.tmdb.org/t/p/w300/${posterPath}`}
+              href={`${POSTER_BASE_PATH}${posterPath}`}
               target="_blank"
               rel="noopener noreferrer"
             >

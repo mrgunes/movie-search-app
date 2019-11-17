@@ -128,15 +128,20 @@ class SearchContainer extends React.Component {
       this.setState(this.initialState);
       return;
     }
-    // if (searchQuery) {
-    this.setState({ loading: true, error: false });
 
     /**
      * page equals to 1 means a new query,
      * therefore, state must reset
      */
     if (page === 1) {
-      this.setState(this.initialState);
+      this.setState({
+        ...this.initialState,
+        loading: true
+      });
+    } else {
+      this.setState({
+        loading: true
+      });
     }
 
     /** Constructing the required URL. */
